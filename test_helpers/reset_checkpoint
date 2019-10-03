@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "
+db.ckpt_default.drop()
+" |
+docker run -i --network primary_net --rm mongo:3.6 mongo --host cfg3 admin

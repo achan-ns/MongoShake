@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "
+db.test_col.drop()
+sh.enableSharding('test_db');
+db.createCollection('test_col');
+db.test_col.ensureIndex({item_id: 'hashed'});
+sh.shardCollection('test_db.test_col', {'item_id': 'hashed'});
+" |
+docker run -i --network primary_net --rm mongo:3.6 mongo --host backup-mongos1 test_db
