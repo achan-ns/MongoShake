@@ -28,6 +28,7 @@ rm -rf ${output}
 
 GOPATH=$(pwd)
 export GOPATH
+echo "$GOPATH"
 
 #compile_line='-race'
 compile_line=''
@@ -60,7 +61,8 @@ info=$info","$t
 
 run_builder='go build -v'
 
-goos=(linux darwin windows)
+# goos=(linux darwin windows)
+goos=(linux)
 for g in "${goos[@]}"; do
     export GOOS=$g
     echo "try build goos=$g"

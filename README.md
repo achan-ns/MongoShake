@@ -90,6 +90,11 @@ Or you can build mongo-shake yourself according to the following steps:
 *  cd ../../ && ./build.sh
 *  ./bin/collector -conf=conf/collector.conf #please note: user must modify collector.conf first to match needs. You can also use \"start.sh\" script which supports hypervisor mechanism in Linux OS only.
 
+# Usage - Docker
+---
+* First, use `mongo-swarm` to spawn a testing environment.
+* Run `docker build -t mongoshake . && docker run -it --rm --name mongoshake --network=primary_net mongoshake`
+
 # Shake series tool
 ---
 We also provide some tools for synchronization in Shake series.<br>
